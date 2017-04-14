@@ -58,8 +58,9 @@ Template.App_home.events({
     },
     'click #movies-sort-by-release-date'(event) {
         event.preventDefault();
-        const btn = event.target;
+        const btn = event.currentTarget;
         if (!$(btn).hasClass('btn-raised')) {
+            $(btn).parent().children('.btn').removeClass('btn-raised');
             $(btn).addClass('btn-raised');
             Session.set('sortMoviesBy', 2);
         } else {
@@ -69,8 +70,9 @@ Template.App_home.events({
     },
     'click #movies-sort-by-title'(event) {
         event.preventDefault();
-        const btn = event.target;
+        const btn = event.currentTarget;
         if (!$(btn).hasClass('btn-raised')) {
+            $(btn).parent().children('.btn').removeClass('btn-raised');
             $(btn).addClass('btn-raised');
             Session.set('sortMoviesBy', 1);
         } else {
