@@ -1,0 +1,56 @@
+<template name="App_home">
+    {{#if movies}}
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <a href="#" id="movies-sort-by-title" class="btn btn-info"><i class="material-icons">swap_vert</i> Title</a>
+                        <a href="#" id="movies-sort-by-release-date" class="btn btn-info"><i class="material-icons">swap_vert</i> Release Date</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            {{#each movies}}
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="w3-card-24">
+                        <figure>
+                            <div class="visit-image">
+                                <img src="./img/movies/{{image}}" alt="no image...">
+                                <h4 class="card-image-title">{{title}}</h4>
+                            </div>
+
+                            <div class="visit-content">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        {{#if isFutureRelease}}
+                                            Releasing
+                                        {{else}}
+                                            Released
+                                        {{/if}}
+                                        {{{getReleaseDate releaseDate}}}<br />
+                                        <span class="rating-text">
+                                            {{#if getRating}}
+                                                Rating {{rating}}
+                                            {{else}}
+                                                Not rated
+                                            {{/if}}
+                                        </span>
+                                        {{#if isFutureRelease}}
+                                            {{> starsRating id=getWidgetId class='rating-widget' rating=rating size='sm'}}
+                                        {{else}}
+                                            {{> starsRating id=getWidgetId class='rating-widget' rating=rating size='sm' mutable=true}}
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <p class="bg-warning text-warning">Oops ! We don't have any movies with verdict !</p>
+    {{/if}}
+</template>

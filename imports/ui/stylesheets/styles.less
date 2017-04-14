@@ -1,0 +1,27 @@
+@import "material/bootstrap-material-design";
+
+@import "cards";
+@import "./not-found";
+
+.content-wrapper {
+  padding-top: 80px;
+}
+
+.content {
+  margin-bottom: 100px;
+}
+
+p.text-warning.bg-warning,
+p.text-info.bg-info {
+  padding: 15px;
+}
+
+// Changes default color.
+.rating-widget .current-rating {
+  color: @blue;
+}
+
+// A color that highlights selected stars when user interacts with the control.
+.rating-widget .active {
+  color: @blue-900;
+}

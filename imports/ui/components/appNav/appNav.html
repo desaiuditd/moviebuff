@@ -1,0 +1,27 @@
+<template name="appNav">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{pathFor 'App.home'}}">
+                    <i class="material-icons">ondemand_video</i>
+                    MovieBuff
+                </a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="{{isActiveRoute 'App.home'}}">
+                        <a href="{{pathFor 'App.home'}}"> <i class="material-icons">dashboard</i> <span>Home</span></a>
+                    </li>
+                    <li class="{{isActiveRoute 'App.analytics'}}">
+                        <a href="{{pathFor 'App.analytics'}}"> <i class="material-icons">insert_chart</i> <span>Analytics</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
