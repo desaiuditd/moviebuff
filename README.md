@@ -1,5 +1,7 @@
 # MovieBuff
-A one page web application for movies and their ratings with analytics
+A one page web application for movies and their ratings with analytics.
+
+The app is hosted at https://moviebuff.incognitech.in
 
 ### How to Run
 
